@@ -1,0 +1,18 @@
+<app-loading *ngIf="loading" class="md-5"></app-loading>
+<div *ngIf="error" class="alert alert-danger animated fadeIn">
+  <h3>Error</h3>
+  <p>
+    {{txtError}}
+  </p>
+</div>
+<div class="card-columns m-5 animated fadeIn">
+  <div class="card" *ngFor="let lista of listas" (click)="verLista( lista )">
+    <img class="card-img-top" [src]="lista.images | noimage" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{lista.name}}</h5>
+      <p class="card-text">
+        <span class="badge badge-pill badge-danger">{{lista.user}}</span>
+      </p>
+    </div>
+  </div>
+</div>

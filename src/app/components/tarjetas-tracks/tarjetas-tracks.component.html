@@ -1,0 +1,19 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Canción</th>
+      <th>Vista Previa</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of items">
+      <td>{{ item.name }}</td>
+      <td>
+         <iframe [src]="item.id | domseguro" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        <!-- <audio [src]="item.preview_url" controls></audio> -->
+      </td>
+      <td><button type="button" name="button" class="btn btn-outline-danger" (click)="addToList(item.id)">Agregar</button></td>
+    </tr>
+  </tbody>
+</table>

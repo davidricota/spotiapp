@@ -1,0 +1,12 @@
+<div class="row equal animated fadeIn">
+  <div class="col-sm-4 d-flex pb-3" *ngFor="let item of items | orderBy: order : true" (click)="verAlbum( item )">
+    <div class="card">
+
+
+    <img class="card-img-top" [src]="item.images | noimage" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{item.name}}</h5>
+  </div>
+    </div>
+  </div>
+</div>
